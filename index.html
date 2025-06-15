@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Quán Sen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🌿 Menu Quán Sen 🌿</h1>
+  <div class="menu">
+    <div class="item" onclick="showPopup('Phở bò', 'Nước dùng đậm đà, thịt bò mềm, hành lá tươi.', 'pho.jpg')">
+      <img src="images/pho.jpg" alt="Phở bò"/>
+      <h3>Phở bò</h3>
+    </div>
+    <div class="item" onclick="showPopup('Bún bò Huế', 'Vị cay nhẹ, sả thơm, giò heo mềm.', 'bunbo.jpg')">
+      <img src="images/bunbo.jpg" alt="Bún bò Huế"/>
+      <h3>Bún bò Huế</h3>
+    </div>
+  </div>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h2 id="popup-title"></h2>
+      <img id="popup-img" src="" alt="" style="width:100%; border-radius:8px;"/>
+      <p id="popup-desc"></p>
+      <a id="zalo-btn" href="" target="_blank">Đặt món qua Zalo</a>
+    </div>
+  </div>
+
+  <script>
+    function showPopup(title, desc, img) {
+      document.getElementById("popup-title").textContent = title;
+      document.getElementById("popup-desc").textContent = desc;
+      document.getElementById("popup-img").src = "images/" + img;
+      document.getElementById("zalo-btn").href = "https://zalo.me/0867673373";
+      document.getElementById("popup").style.display = "flex";
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
